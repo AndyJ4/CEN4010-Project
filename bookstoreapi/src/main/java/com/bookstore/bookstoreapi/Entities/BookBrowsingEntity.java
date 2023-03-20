@@ -5,9 +5,18 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "books")
 public class BookBrowsingEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String name;
+
+    @Column
     private String genre;
+
+    @Column
     private Integer copies;
 
     public BookBrowsingEntity() {}
@@ -19,8 +28,6 @@ public class BookBrowsingEntity {
         this.copies = copies;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId() {
         return id;
     }
