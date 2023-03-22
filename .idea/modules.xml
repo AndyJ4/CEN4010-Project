@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CEN4010-Project.iml" filepath="$PROJECT_DIR$/.idea/CEN4010-Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/profileMangement/Springboot-Restapi.iml" filepath="$PROJECT_DIR$/profileMangement/Springboot-Restapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/bookstoreapi/bookstoreapi.iml" filepath="$PROJECT_DIR$/bookstoreapi/bookstoreapi.iml" />
     </modules>
   </component>
