@@ -37,6 +37,7 @@ public class BookBrowsingController {
             return bookBrowsingRepository.findTop10ByOrderByCopiesDesc();
         }
 
+
         @GetMapping("api/books/rating/{rating}")
         public List<BookBrowsingEntity> findByRatingGreaterThan(@PathVariable(value = "rating") Double rating) {
             return bookBrowsingRepository.findByRatingGreaterThan(rating);

@@ -15,6 +15,7 @@ public class BookBrowsingEntity {
 
     @Column
     private String genre;
+
     @Column
     private Integer copies;
     @Column
@@ -72,4 +73,5 @@ public class BookBrowsingEntity {
     public Double getPrice() {return price;}
 
     public void setPrice(Double price) {this.price = price;}
+
 }

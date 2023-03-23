@@ -78,6 +78,7 @@ public class WishlistController {
 
     @GetMapping("/{id}")
     public List<BookBrowsingEntity> getAllBooksFromWishlist(@PathVariable(value = "id") Integer wishlist_id){
+
         List<WishlistedBook> allBooks = wishlistedBookRepo.getAllByWishlistId(wishlist_id);
         List<BookBrowsingEntity> books = new ArrayList<>();
         allBooks.forEach(book -> {
