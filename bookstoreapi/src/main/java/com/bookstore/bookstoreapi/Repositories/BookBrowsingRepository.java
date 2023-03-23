@@ -10,4 +10,5 @@ import java.util.List;
 public interface BookBrowsingRepository extends JpaRepository<BookBrowsingEntity, Integer> {
     List<BookBrowsingEntity> findByGenre(String genre);
     List<BookBrowsingEntity> findTop10ByOrderByCopiesDesc();
+    List<BookBrowsingEntity> findByRatingGreaterThan(Double rating);
 }
