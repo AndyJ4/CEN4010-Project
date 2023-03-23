@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface WishlistedBookRepository extends JpaRepository<WishlistedBook, Integer> {
     WishlistedBook getWishlistedBookByWishlistIdAndBookId(Integer wishlist_id, Integer book_id);
-    List<WishlistedBook> getAllBywishlistId(Integer wishlist_id);
+    List<WishlistedBook> getAllByWishlistId(Integer wishlist_id);
 }
