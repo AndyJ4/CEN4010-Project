@@ -18,6 +18,12 @@ public class BookBrowsingEntity {
 
     @Column
     private Integer copies;
+    @Column
+    private Double rating;
+    @Column
+    private String publisher;
+    @Column
+    private Double price;
 
     public BookBrowsingEntity() {}
 
@@ -55,5 +61,17 @@ public class BookBrowsingEntity {
     public Integer getCopies() {return copies;}
 
     public void setCopies(Integer copies) {this.copies = copies;}
+
+    public Double getRating() {return rating;}
+
+    public void setRating(Double rating) {this.rating = rating;}
+
+    public String getPublisher() {return publisher;}
+
+    public void setPublisher(String publisher) {this.publisher = publisher;}
+
+    public Double getPrice() {return price;}
+
+    public void setPrice(Double price) {this.price = price;}
 
 }

@@ -78,11 +78,13 @@ public class WishlistController {
 
     @GetMapping("/{id}")
     public List<BookBrowsingEntity> getAllBooksFromWishlist(@PathVariable(value = "id") Integer wishlist_id){
-        List<WishlistedBook> allBooks = wishlistedBookRepo.getAllBywishlistId(wishlist_id);
+
+        List<WishlistedBook> allBooks = wishlistedBookRepo.getAllByWishlistId(wishlist_id);
         List<BookBrowsingEntity> books = new ArrayList<>();
         allBooks.forEach(book -> {
-
-            books.add(bookBrowsingRepo.findById(book.getId()).get());
+            int id = book.getBookId();
+            BookBrowsingEntity bookObj = bookBrowsingRepo.findById(id).get();
+            books.add(bookObj);
         });
         return books;
     }
