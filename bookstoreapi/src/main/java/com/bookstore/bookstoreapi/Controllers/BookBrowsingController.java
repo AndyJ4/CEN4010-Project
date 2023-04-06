@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 public class BookBrowsingController {
+        @Autowired
         private BookBrowsingService service;
 
         @Autowired
@@ -52,11 +53,11 @@ public class BookBrowsingController {
         }
 
         @PutMapping("/api/books/test/{id}")
-        public BookBrowsingEntity updateBook(@PathVariable int id, @RequestBody BookBrowsingEntity bookRequest) {
-            return service.updateProduct(id, bookRequest);
+        public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity bookRequest) {
+            return service.updateBook(id, bookRequest);
         }
 
-        @PutMapping("/api/books/discount/{id}")
+        /*@PutMapping("/api/books/discount/{id}")
         public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity book) {
             BookBrowsingEntity bookToUpdate = bookBrowsingRepository.getReferenceById(id);
             bookToUpdate.setId(id);
@@ -68,7 +69,7 @@ public class BookBrowsingController {
             bookToUpdate.setPrice(book.getPrice());
 
             return bookBrowsingRepository.save(bookToUpdate);
-        }
+        }*/
 
 
 }

@@ -10,7 +10,7 @@ public class BookBrowsingService {
     @Autowired
     private BookBrowsingRepository repository;
 
-    public BookBrowsingEntity updateProduct(int id, BookBrowsingEntity bookRequest) {
+    public BookBrowsingEntity updateBook(Integer id, BookBrowsingEntity bookRequest) {
         BookBrowsingEntity existingBook = repository.findById(id).get();
         existingBook.setPublisher(bookRequest.getPublisher());
         existingBook.setName(bookRequest.getName());
