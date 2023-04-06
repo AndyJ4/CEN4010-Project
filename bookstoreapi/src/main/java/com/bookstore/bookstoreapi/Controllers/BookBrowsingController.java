@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Book;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -55,6 +57,11 @@ public class BookBrowsingController {
         @PutMapping("/api/books/test/{id}")
         public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity bookRequest) {
             return service.updateBook(id, bookRequest);
+        }
+
+        @PatchMapping("/api/books/patch/{id}")
+        public BookBrowsingEntity updateBookFields(@PathVariable Integer id, @RequestBody Map<String, Objects> fields) {
+            return service.updateBookByFields(id, fields);
         }
 
         /*@PutMapping("/api/books/discount/{id}")

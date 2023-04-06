@@ -27,11 +27,14 @@ public class BookBrowsingEntity {
 
     public BookBrowsingEntity() {}
 
-    public BookBrowsingEntity(Integer id, String name, String genre, Integer copies) {
+    public BookBrowsingEntity(Integer id, String name, String genre, Integer copies, Double rating, String publisher, Double price) {
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.copies = copies;
+        this.rating = rating;
+        this.publisher = publisher;
+        this.price = price;
     }
 
     public Integer getId() {
