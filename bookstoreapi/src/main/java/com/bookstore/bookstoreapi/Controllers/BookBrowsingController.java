@@ -3,6 +3,7 @@ package com.bookstore.bookstoreapi.Controllers;
 import com.bookstore.bookstoreapi.Entities.BookBrowsingEntity;
 import com.bookstore.bookstoreapi.Entities.User;
 import com.bookstore.bookstoreapi.Repositories.BookBrowsingRepository;
+import com.bookstore.bookstoreapi.Service.BookBrowsingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 public class BookBrowsingController {
+        private BookBrowsingService service;
 
         @Autowired
         BookBrowsingRepository bookBrowsingRepository;
@@ -48,6 +50,12 @@ public class BookBrowsingController {
         public BookBrowsingEntity createBook(@RequestBody BookBrowsingEntity book) {
             return bookBrowsingRepository.save(book);
         }
+
+        @PutMapping("/api/books/test/{id}")
+        public BookBrowsingEntity updateBook(@PathVariable int id, @RequestBody BookBrowsingEntity bookRequest) {
+            return service.updateProduct(id, bookRequest);
+        }
+
         @PutMapping("/api/books/discount/{id}")
         public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity book) {
             BookBrowsingEntity bookToUpdate = bookBrowsingRepository.getReferenceById(id);
