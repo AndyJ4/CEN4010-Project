@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -27,7 +26,7 @@ public class BookBrowsingService {
         return repository.save(existingBook);
     }
 
-    public BookBrowsingEntity updateBookByFields(Integer id, Map<String, Objects> fields) {
+    /*public BookBrowsingEntity updateBookByFields(Integer id, Map<String, Object> fields) {
         Optional<BookBrowsingEntity> existingBook = repository.findById(id);
 
         if (existingBook.isPresent()) {
@@ -39,5 +38,5 @@ public class BookBrowsingService {
             return repository.save(existingBook.get());
         }
         return null;
-    }
+    }*/
 }
