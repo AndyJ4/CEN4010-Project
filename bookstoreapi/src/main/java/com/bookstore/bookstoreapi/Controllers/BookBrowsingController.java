@@ -54,14 +54,13 @@ public class BookBrowsingController {
             return bookBrowsingRepository.save(book);
         }
 
-        @PutMapping("/api/books/discount/{id}")
+        @PutMapping("/api/books/test/{id}")
         public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity bookRequest) {
             return service.updateBook(id, bookRequest);
         }
 
-        /*
         @PatchMapping("/api/books/patch/{id}")
-        public BookBrowsingEntity updateBookFields(@PathVariable Integer id, @RequestBody Map<String, Object> fields) {
+        public BookBrowsingEntity updateBookFields(@PathVariable Integer id, @RequestBody Map<String, Objects> fields) {
             return service.updateBookByFields(id, fields);
         }
 

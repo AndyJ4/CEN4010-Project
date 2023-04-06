@@ -9,10 +9,13 @@ public class BookBrowsingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column
     private String name;
+
     @Column
     private String genre;
+
     @Column
     private Integer copies;
     @Column
@@ -23,6 +26,7 @@ public class BookBrowsingEntity {
     private Double price;
 
     public BookBrowsingEntity() {}
+
     public BookBrowsingEntity(Integer id, String name, String genre, Integer copies, Double rating, String publisher, Double price) {
         this.id = id;
         this.name = name;
