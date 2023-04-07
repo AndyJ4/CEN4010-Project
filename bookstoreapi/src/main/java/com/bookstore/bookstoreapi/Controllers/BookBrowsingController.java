@@ -54,7 +54,7 @@ public class BookBrowsingController {
             return bookBrowsingRepository.save(book);
         }
 
-        @PutMapping("/api/books/test/{id}")
+        @PutMapping("/api/books/discount/{id}")
         public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity bookRequest) {
             return service.updateBook(id, bookRequest);
         }
