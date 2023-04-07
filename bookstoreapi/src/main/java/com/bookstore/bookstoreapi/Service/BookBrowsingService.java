@@ -27,17 +27,4 @@ public class BookBrowsingService {
         return repository.save(existingBook);
     }
 
-    public BookBrowsingEntity updateBookByFields(Integer id, Map<String, Objects> fields) {
-        Optional<BookBrowsingEntity> existingBook = repository.findById(id);
-
-        if (existingBook.isPresent()) {
-            fields.forEach((key, value) -> {
-                Field field = ReflectionUtils.findField(BookBrowsingEntity.class, key);
-                field.setAccessible(true);
-                ReflectionUtils.setField(field, existingBook.get(), value);
-            });
-            return repository.save(existingBook.get());
-        }
-        return null;
-    }
 }
