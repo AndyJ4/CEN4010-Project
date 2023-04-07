@@ -59,24 +59,6 @@ public class BookBrowsingController {
             return service.updateBook(id, bookRequest);
         }
 
-        @PatchMapping("/api/books/patch/{id}")
-        public BookBrowsingEntity updateBookFields(@PathVariable Integer id, @RequestBody Map<String, Objects> fields) {
-            return service.updateBookByFields(id, fields);
-        }
-
-        /*@PutMapping("/api/books/discount/{id}")
-        public BookBrowsingEntity updateBook(@PathVariable Integer id, @RequestBody BookBrowsingEntity book) {
-            BookBrowsingEntity bookToUpdate = bookBrowsingRepository.getReferenceById(id);
-            bookToUpdate.setId(id);
-            bookToUpdate.setPublisher(book.getPublisher());
-            bookToUpdate.setName(book.getName());
-            bookToUpdate.setGenre(book.getGenre());
-            bookToUpdate.setCopies(book.getCopies());
-            bookToUpdate.setRating(book.getRating());
-            bookToUpdate.setPrice(book.getPrice());
-
-            return bookBrowsingRepository.save(bookToUpdate);
-        }*/
 
 
 }
